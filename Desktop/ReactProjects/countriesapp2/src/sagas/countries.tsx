@@ -8,7 +8,7 @@ export default function* fetchCountriesSaga(){
     try {
         return "aaaaaaaaaaaaaaaaaaaaaaaaaaa";
         //call the api here
-        console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaas");
+        console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaas");
 //const response =yield call(fetch_countries_api,"")
 
 //yield put(fetchCountriesResult("",response.data))
