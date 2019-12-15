@@ -1,14 +1,16 @@
 import * as React from 'react';
 import { View, Text, Platform, TouchableOpacity, TouchableNativeFeedback, Image } from 'react-native';
 import { countryObjectStyles as styles } from './styles';
- export default class CountryObject extends React.Component{
+import { withNavigation } from 'react-navigation';
+
+class CountryObject extends React.Component{
 
     render(){
         
 
 
 		return (
-			<TouchableOpacity style={styles.container} >
+			<TouchableOpacity style={styles.container} onPress={()=>{this.props.navigation.navigate('Detay',{veri:this.props.country})}} >
 				<View style={styles.contentContainer} >
 					<Image
                     style={styles.countryFlag}
@@ -22,3 +24,5 @@ import { countryObjectStyles as styles } from './styles';
 		);
     }
 }
+
+export default withNavigation(CountryObject);

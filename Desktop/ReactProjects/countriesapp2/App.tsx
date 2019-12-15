@@ -1,19 +1,21 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Home from './src/screens/Home/home';
-import {Provider} from 'react-redux';
-import {createStore} from "redux";
-import {createLogger  } from "redux-logger";
-import Countries from './src/reducers/countries';
-import {store  } from "./src/config/store";
+import { createAppContainer, } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import Baslangic from './baslangic';
+import countryDetail from "./src/screens/Details/countryDetail";
+import CountryObject from "./src/screens/Home/countryObject";
+const AppNavigator = createStackNavigator(
+   {
+    Home: Baslangic,
+    Detay:countryDetail,
+  },
+  {
+    initialRouteName: 'Home',
+    headerMode:'none',
+    navigationOptions:{
+      headerVisible:false
+    }
+  }
 
-export default function App() {
-  return (
-    <Provider store={store}>
-    <View style={{flex:1}}>
-      <Home/>
-    </View>
-    </Provider>
-  );
-}  
+);
 
+export default createAppContainer(AppNavigator);

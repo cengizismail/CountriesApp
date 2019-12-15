@@ -16,6 +16,7 @@ constructor(props){
 }
 componentDidMount(){
   this.props.butunUlkeleriGetir();
+ 
 }
 onSearchButtonTouched = () => {
   this.props.butunUlkeleriGetir(this.state.searcQuery);
